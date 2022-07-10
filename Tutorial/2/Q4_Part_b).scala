@@ -28,14 +28,5 @@ object main extends App{
     println(profit(30));
     println(profit(35));
     println(profit(40));
-    println(profit(45));
-
-
-
-
-
-
-
-
-    
+    println(profit(45));   
 }
