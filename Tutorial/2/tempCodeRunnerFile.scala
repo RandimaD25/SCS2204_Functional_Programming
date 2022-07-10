@@ -1,1 +1,0 @@
-print(takeHomeIncome(40, 30));
