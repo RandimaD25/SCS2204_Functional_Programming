@@ -1,29 +1,29 @@
-def isEven(num: Int) : Boolean = {
+def even(num: Int) : Boolean = {
     if (num == 0) {
         return true;
     } else if (num == 1) {
         return false;
     } else {
-        return isEven(num - 2);
+        return even(num - 2);
     }
 }
 
-def evenAddtion(n: Int, maxN: Array[Int] = Array()) : Int =  {
-
+def evenAddtion(n: Int, firstTime: String = "yes") : Int =  {
     if(n == 0) {
         return 0;
-    } else if (isEven(n) && maxN.isEmpty) {
-        val newMaxN  = Array(n);
-        return evenAddtion(n - 1, newMaxN);
-    } else if (isEven(n) && !maxN.isEmpty) {
-        return n + evenAddtion(n - 1, maxN); }
+    } else if (even(n) && firstTime == "yes") {
+        return evenAddtion(n - 1, "no");
+    } else if (even(n) && firstTime != "yes") {
+        return n + evenAddtion(n - 1, "no"); }
      else {
-        return evenAddtion(n - 1, maxN);
+        return evenAddtion(n - 1, "no");
     }
 }
+
 
 
 object main extends App{
     println(evenAddtion(10))
+    println(evenAddtion(6))
 
 }
