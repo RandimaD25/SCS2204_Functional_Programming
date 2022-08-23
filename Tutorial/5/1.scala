@@ -15,3 +15,4 @@ object main extends App{
     println(prime(2))
     println(prime(4))
 }
+
