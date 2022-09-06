@@ -1,26 +1,45 @@
-object main extends App{
+object  Caesar_Cipher extends App{
+    //initialize alphabet
+    val alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    
+    //encryption function
+    val encryption = (shift:Int,c:Char)=>
+        if((alphabet.indexOf(c.toUpper))== -1) c 
+        else alphabet((alphabet.indexOf(c.toUpper)+shift)% alphabet.size)
+    
+    //decryption function
+    val decryption =(shift:Int,c:Char)=> {
+        if((alphabet.indexOf(c.toUpper))== -1) c
+        else if((alphabet.indexOf(c.toUpper)-shift)<0) alphabet((alphabet.indexOf(c.toUpper)-shift+alphabet.size)% alphabet.size)
+        else alphabet((alphabet.indexOf(c.toUpper)-shift)% alphabet.size)
+    }
+    
+    val Cipher = (func:(Int,Char)=>Char,s:String,shift:Int)=> s.map(func(shift,_))
+    //get a string as a user input
+    println("Enter String:")
+    val str=scala.io.StdIn.readLine()
+    println("Message:  "+str)
+    
+    println("Enter 1-to encrypt message");
+    println("Enter 2-to decrypt message");
+    val a=scala.io.StdIn.readInt()
 
-val encrypt = (character: Char, shift: Int)  => {
+    println("Enter Shift Number:")
+    var shiftnum=scala.io.StdIn.readInt()
+    if(a==1){
+        // val string = str.replace(" ", "")
+        // println("String: "+string)
+        val em = Cipher(encryption, str, shiftnum)
+        println("Encrypt message :"+em)
+    }
+    else{
+        // val string = str.replace(" ", "")
+        // println("String: "+string)
+        val dm = Cipher(decryption, str,shiftnum)
+        println("Decrypt message :"+dm)
 
-    val charAsInt = character.toInt;
-    val shiftedInt = charAsInt + shift;
-    val encryptedChar = shiftedInt.toChar
-    encryptedChar;
-}
-
-val decrypt = (character: Char, shift: Int) => {
-
-    val charAsInt = character.toInt;
-    val shiftedInt = charAsInt - shift;
-    val decryptedChar = shiftedInt.toChar
-    decryptedChar;
-}
-
-    val cipher = (secret: String, shift: Int, mode: (Char, Int) => Char) => secret.map(mode(_, shift))
-    println(cipher("ABCD", 1, encrypt))   
-    println(cipher("Randima", 4, encrypt))    
-    println(cipher("CDEF", 2, decrypt))    
-
-
+    }
+    
+    
 
 }
