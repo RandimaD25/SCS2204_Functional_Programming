@@ -1,4 +1,4 @@
-object  Caesar_Cipher extends App{
+object  main extends App{
     //initialize alphabet
     val alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     
