@@ -3,15 +3,15 @@ object  Caesar_Cipher extends App{
     val alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     
     //encryption function
-    val encryption = (shift:Int,c:Char)=>
-        if((alphabet.indexOf(c.toUpper))== -1) c 
-        else alphabet((alphabet.indexOf(c.toUpper)+shift)% alphabet.size)
+    val encryption = (shift:Int,charac:Char)=>
+        if((alphabet.indexOf(charac.toUpper))== -1) charac 
+        else alphabet((alphabet.indexOf(charac.toUpper)+shift)% alphabet.size)
     
     //decryption function
-    val decryption =(shift:Int,c:Char)=> {
-        if((alphabet.indexOf(c.toUpper))== -1) c
-        else if((alphabet.indexOf(c.toUpper)-shift)<0) alphabet((alphabet.indexOf(c.toUpper)-shift+alphabet.size)% alphabet.size)
-        else alphabet((alphabet.indexOf(c.toUpper)-shift)% alphabet.size)
+    val decryption =(shift:Int,charac:Char)=> {
+        if((alphabet.indexOf(charac.toUpper))== -1) charac
+        else if((alphabet.indexOf(charac.toUpper)-shift)<0) alphabet((alphabet.indexOf(charac.toUpper)-shift+alphabet.size)% alphabet.size)
+        else alphabet((alphabet.indexOf(charac.toUpper)-shift)% alphabet.size)
     }
     
     val Cipher = (func:(Int,Char)=>Char,s:String,shift:Int)=> s.map(func(shift,_))
@@ -29,14 +29,14 @@ object  Caesar_Cipher extends App{
     if(a==1){
         // val string = str.replace(" ", "")
         // println("String: "+string)
-        val em = Cipher(encryption, str, shiftnum)
-        println("Encrypt message :"+em)
+        val encrypt = Cipher(encryption, str, shiftnum)
+        println("Encrypt message :"+encrypt)
     }
     else{
         // val string = str.replace(" ", "")
         // println("String: "+string)
-        val dm = Cipher(decryption, str,shiftnum)
-        println("Decrypt message :"+dm)
+        val decrypt = Cipher(decryption, str,shiftnum)
+        println("Decrypt message :"+decrypt)
 
     }
     
