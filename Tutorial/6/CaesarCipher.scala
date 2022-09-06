@@ -27,14 +27,10 @@ object  main extends App{
     println("Enter Shift Number:")
     var shiftnum=scala.io.StdIn.readInt()
     if(a==1){
-        // val string = str.replace(" ", "")
-        // println("String: "+string)
         val encrypt = Cipher(encryption, str, shiftnum)
         println("Encrypt message :"+encrypt)
     }
     else{
-        // val string = str.replace(" ", "")
-        // println("String: "+string)
         val decrypt = Cipher(decryption, str,shiftnum)
         println("Decrypt message :"+decrypt)
 
