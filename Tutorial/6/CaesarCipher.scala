@@ -12,8 +12,8 @@ val decrypt = (character: Char, shift: Int) => {
 
     val charAsInt = character.toInt;
     val shiftedInt = charAsInt - shift;
-    val encryptedChar = shiftedInt.toChar
-    encryptedChar;
+    val decryptedChar = shiftedInt.toChar
+    decryptedChar;
 }
 
     val cipher = (secret: String, shift: Int, mode: (Char, Int) => Char) => secret.map(mode(_, shift))
