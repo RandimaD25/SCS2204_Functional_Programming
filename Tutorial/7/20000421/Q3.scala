@@ -1,4 +1,4 @@
-object Q3 extends App{
+object main extends App{
 
   class Account(id: String, n: Int, b: Double){
     val NIC:String = id

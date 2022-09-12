@@ -3,9 +3,9 @@ object main extends App {
     val y = new Rational(5,8)
     val z = new Rational(2,7)
   
-    val a = x-y-z
+    val answer = x-y-z
     
-    println(a)
+    println(answer)
 }
 
 class Rational(n:Int, d:Int) {
