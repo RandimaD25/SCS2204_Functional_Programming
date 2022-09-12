@@ -17,7 +17,7 @@ object main extends App{
 
   val overdraft = bank.filter(x=>x.Balance<0)
   val balance = bank.map((x)=>(x.Balance)).reduce((x,y)=>(x+y))
-  val interest = (b:List[Account])=>b.map((x) => (x.NIC,x.acnumber,if(x.Balance>0)  (x.Balance+(x.Balance*0.5)) else (x.Balance+(x.Balance*0.1)) ))
+  val interest = (b:List[Account])=>b.map((x) => (x.NIC,x.acnumber,if(x.Balance>0)  (x.Balance+(x.Balance*0.05)) else (x.Balance+(x.Balance*0.1)) ))
 
   println("List of Account with negative balances : " + overdraft)
   println("Sum of all accounts : Rs:" + balance)
