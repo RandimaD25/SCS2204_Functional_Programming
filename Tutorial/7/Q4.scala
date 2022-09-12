@@ -8,10 +8,10 @@ object main extends App{
     override def toString = "NIC : "+NIC+"   Acc. NO : "+acnumber+"   Balance : "+Balance
 
   }
-  val acc1= new Account("983456218v",1338982,76500)
-  val acc2= new Account("945672345v",1339876,-5000)
-  val acc3= new Account("952438976v",1338972,45500)
-  val acc4= new Account("897653298v",1339875,-20000)
+  val acc1= new Account("995452219v",1338982,76500)
+  val acc2= new Account("925622324v",1339876,-5000)
+  val acc3= new Account("912233946v",1338972,45500)
+  val acc4= new Account("887653208v",1339875,-20000)
 
   var bank:List[Account]=List(acc1,acc2,acc3,acc4)
 
